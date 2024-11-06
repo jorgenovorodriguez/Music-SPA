@@ -1,6 +1,6 @@
 export const getImageUrl = (path: string)  => {
     try {
-        return `public/images/${path}`; 
+        return `/images/${path}`; 
     } catch (error) {
         console.error(error);
     }
