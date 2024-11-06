@@ -1,0 +1,15 @@
+:root {
+    /* colors */
+    --color-text: #ffffff;
+    --color-text-secondary: #bcbcbc;
+    --button-primary: #54399f85;
+    --button-secondary: #7855dc;
+    --card-bg: #211626;
+    --color-bg: #0a0b14;
+    --gradient-bg: linear-gradient(90deg, #7953dc 0%, #3aaad9 100%);
+
+    /* fonts */
+    --font-Dmsans: 'DM Sans', sans-serif;
+    --font-Raleway: 'Raleway', sans-serif;
+    --font-Inter: 'Inter', sans-serif;
+}

@@ -1,0 +1,83 @@
+@import '../../vars.css';
+
+.card {
+    position: relative;
+    width: 15rem;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    background-color: #211626;
+    cursor: pointer;
+}
+
+.card img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.details {
+    padding: 1rem;
+}
+
+.songTitle {
+    font-family: var(--font-Raleway);
+    font-weight: 700;
+}
+
+.author {
+    font-family: var(--font-Dmsans);
+    font-weight: 400;
+    color: var(--color-text-secondary);
+    font-size: 0.75rem;
+}
+
+.menu {
+    width: 90%;
+    position: absolute;
+    bottom: 0;
+    margin: 0 5%;
+    display: flex;
+    justify-content: space-around;
+    background-color: #322638;
+    padding: 0.5rem 0;
+    transform: translateY(100%);
+    opacity: 0;
+    border-radius: 1rem;
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.card:hover .menu {
+    transform: translateY(50%);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.iconButton {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    .card {
+        width: 15rem;
+    }
+}
+
+@media (max-width: 520px) {
+    .card {
+        width: 100%;
+        height: 25rem;
+    }
+
+    .menu {
+        bottom: 1.5rem;
+        opacity: 1;
+    }
+}

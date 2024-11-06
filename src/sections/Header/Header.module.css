@@ -1,0 +1,161 @@
+@import '../../vars.css';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 4px solid #131418;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.logo img {
+    width: 3rem;
+    height: auto;
+    object-fit: contain;
+}
+
+.logo h1 {
+    font-family: var(--font-Inter);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.mobileMenu {
+    display: none;
+}
+
+.navMobileOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+.navMobileOverlay.open {
+    display: block;
+}
+
+.listMobile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 1;
+    width: 80vh;
+    margin-top: 150px;
+}
+
+.navMenu {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.navItem {
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 10px 25px 1px 25px;
+    gap: 6px;
+    border-radius: 52px 0px 0px 0px;
+    opacity: 0px;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-Raleway);
+}
+
+.navItem:first-child {
+    background-color: var(--button-primary);
+    border-radius: 1.25rem;
+}
+
+.navItem:nth-child(4) {
+    background-color: var(--button-secondary);
+    border-radius: 1.25rem;
+}
+
+.profileItem {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profileItem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+    .logo h1 {
+        display: none;
+    }
+
+    .navItem {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo h1 {
+        display: none;
+    }
+
+    .logo img {
+        display: none;
+    }
+
+    .navItem {
+        display: none;
+    }
+
+    .mobileMenu {
+        display: block;
+    }
+
+    .navMobileOverlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.9);
+        z-index: 50;
+    }
+
+    .listMobile {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        z-index: 1;
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .navMenuMobile {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        padding: 2rem;
+        gap: 2rem;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    .navMenuMobile li {
+        color: var(--color-text-secondary);
+    }
+}
