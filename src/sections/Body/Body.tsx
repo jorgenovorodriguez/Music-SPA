@@ -7,8 +7,7 @@ import PlaylistMenu from '../../components/PlaylistMenu/PlaylistMenu';
 import SongList from '../../components/SongList/SongList';
 
 const Body: React.FC = () => {
-    const { playlist, error, token, isLoading } = useSpotifyPlaylist();
-    console.log(playlist, token, error, isLoading);
+    const { playlist, isLoading } = useSpotifyPlaylist();
 
     const songs = playlist?.tracks.items.map((item) => {
         const track = item.track;
@@ -18,13 +17,12 @@ const Body: React.FC = () => {
             author: track.artists[0].name,
         };
     });
-    console.log(songs);
 
     return (
         <div className={styles.bodyContainer}>
             <AddBlock />
             <PlaylistMenu />
-            <SongList songs={songs} />
+            {!isLoading && <SongList songs={songs} />}
         </div>
     );
 };
