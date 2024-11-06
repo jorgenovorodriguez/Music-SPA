@@ -1,8 +1,20 @@
-import { CardProps } from '../../interfaces/interfaces';
+import { CardProps, IconProps } from '../../interfaces/interfaces';
 import { AgreeIcon, HeartIcon, ShoppingIcon } from '../SvgIcons';
 import styles from './CardSong.module.css';
 
+const IconButton: React.FC<IconProps> = ({ icon: Icon }) => (
+    <div className={styles.iconButton}>
+        <Icon color='#FFFFFF' width='1.5rem' />
+    </div>
+);
+
 const CardSong: React.FC<CardProps> = ({ imageUrl, songTitle, author }) => {
+    const icons = [
+        { icon: AgreeIcon },
+        { icon: ShoppingIcon },
+        { icon: HeartIcon },
+    ];
+
     return (
         <div className={styles.card}>
             <img src={imageUrl} alt={songTitle} className={styles.image} />
@@ -11,15 +23,9 @@ const CardSong: React.FC<CardProps> = ({ imageUrl, songTitle, author }) => {
                 <p className={styles.author}>{`@${author}`}</p>
             </div>
             <div className={styles.menu}>
-                <div className={styles.iconButton}>
-                    <AgreeIcon color={'#FFFFFF'} width={'1.5rem'} />
-                </div>
-                <div className={styles.iconButton}>
-                    <ShoppingIcon color={'#FFFFFF'} width={'1.5rem'} />
-                </div>
-                <div className={styles.iconButton}>
-                    <HeartIcon color={'#FFFFFF'} width={'1.5rem'} />
-                </div>
+                {icons.map(({ icon }, index) => (
+                    <IconButton key={index} icon={icon} />
+                ))}
             </div>
         </div>
     );

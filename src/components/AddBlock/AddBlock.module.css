@@ -37,6 +37,13 @@
     padding: 0.5rem 1.5rem;
     font-family: var(--font-Inter);
     border-radius: 1.25rem;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background-color 0.3s, filter 0.3s;
+}
+
+.buttons div:hover {
+    filter: brightness(1.2);
+    transform: scale(1.05);
 }
 
 .buttons div:first-child {

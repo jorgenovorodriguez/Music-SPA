@@ -1,10 +1,10 @@
 import React from 'react';
-import './Body.module.css';
 import { useSpotifyPlaylist } from '../../hooks/useSpotifyPlaylist';
 import AddBlock from '../../components/AddBlock/AddBlock';
 import styles from './Body.module.css';
 import PlaylistMenu from '../../components/PlaylistMenu/PlaylistMenu';
 import SongList from '../../components/SongList/SongList';
+import { Loading } from '../../components/Loading/Loading';
 
 const Body: React.FC = () => {
     const { playlist, isLoading } = useSpotifyPlaylist();
@@ -22,7 +22,7 @@ const Body: React.FC = () => {
         <div className={styles.bodyContainer}>
             <AddBlock />
             <PlaylistMenu />
-            {!isLoading && <SongList songs={songs} />}
+            {isLoading ? <Loading /> : <SongList songs={songs} />}
         </div>
     );
 };

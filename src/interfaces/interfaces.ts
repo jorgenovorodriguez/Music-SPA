@@ -10,6 +10,14 @@ export interface CardProps {
   author: string;
 }
 
+export interface IconProps {
+  icon: React.ElementType;
+}
+
+export interface ListItemProps {
+  text: string;
+}
+
 export interface Song {
   imageUrl: string;
   songTitle: string;
@@ -18,6 +26,13 @@ export interface Song {
 
 export interface SongListProps {
   songs: Song[] | undefined;
+}
+
+export interface UseSpotifyPlaylistResult {
+  token: string | undefined;
+  playlist: Playlist | undefined;
+  isLoading: boolean;
+  error: Error | null;
 }
 
 export interface Playlist {

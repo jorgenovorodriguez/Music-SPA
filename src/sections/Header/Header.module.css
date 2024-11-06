@@ -70,6 +70,16 @@
     align-items: center;
     justify-content: center;
     font-family: var(--font-Raleway);
+    transition: transform 0.3s ease-in-out, background-color 0.3s, filter 0.3s;
+}
+
+.navItem:hover {
+    filter: brightness(1.2);
+    transform: scale(1.05);
+}
+
+.icon {
+    padding-right: 0.5rem;
 }
 
 .navItem:first-child {
@@ -157,5 +167,6 @@
 
     .navMenuMobile li {
         color: var(--color-text-secondary);
+        font-family: var(--font-Raleway);
     }
 }

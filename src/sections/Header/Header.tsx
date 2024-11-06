@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import styles from './Header.module.css';
 import { getImageUrl } from '../../utils';
-import { CloseIcon, MenuIcon } from '../../components/SvgIcons';
+import { CloseIcon, HomeIcon, MenuIcon } from '../../components/SvgIcons';
 
 const Header: React.FC = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     const navItems = [
-        { label: 'Home', className: styles.navItem },
+        {
+            label: 'Home',
+            className: styles.navItem,
+            icon: <HomeIcon color='#FFFFFF' width='0.75rem' />,
+        },
         { label: 'Descubrir', className: styles.navItem },
         { label: 'Favoritos', className: styles.navItem },
         { label: 'Subir Obra', className: styles.navItem },
@@ -32,6 +36,9 @@ const Header: React.FC = () => {
                 <ul className={styles.navMenu}>
                     {navItems.map((item, index) => (
                         <li key={index} className={item.className}>
+                            {item.icon && (
+                                <span className={styles.icon}>{item.icon}</span>
+                            )}
                             {item.label}
                         </li>
                     ))}

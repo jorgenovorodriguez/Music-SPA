@@ -1,5 +1,4 @@
 import styles from './AddBlock.module.css';
-
 import { getImageUrl } from '../../utils';
 
 const AddBlock: React.FC = () => {
